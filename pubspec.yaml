@@ -1,0 +1,33 @@
+name: sample_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  animations: ^2.0.7
+  cached_network_image: ^3.2.3
+  cupertino_icons: ^1.0.5
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.3.6
+  go_router: ^9.0.2
+  google_fonts: ^5.1.0
+  intl: ^0.18.1
+  riverpod_annotation: ^2.1.1
+  url_launcher: ^6.1.11
+  uuid: ^3.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  custom_lint: ^0.4.0
+  riverpod_generator: ^2.2.3
+  riverpod_lint: ^1.3.2
+
+flutter:
+  uses-material-design: true
