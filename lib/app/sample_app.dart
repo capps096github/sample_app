@@ -1,22 +1,23 @@
-import '../sample_app_exporter.dart';
+import '../app_exporter.dart';
 
+///This is the root of our SampleApp app
 class SampleApp extends ConsumerWidget {
-  ///This is the root of our sample_app app
+  /// [SampleApp] constructor
   const SampleApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.watch(goRouterProvider);
 
-    final sampleAppTheme = ref.watch(sampleAppThemeProvider);
+    final appTheme = ref.watch(appThemeProvider);
 
     return MaterialApp.router(
       // -- Router --
       routerConfig: goRouter,
 
       // -- Theme --
-      color: sampleAppColor,
-      theme: sampleAppTheme,
+      color: appColor,
+      theme: appTheme,
 
       // -- Title --
       title: sampleAppTitle,

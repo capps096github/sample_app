@@ -1,22 +1,26 @@
-import '../../sample_app_exporter.dart';
+import '../../app_exporter.dart';
 
 ///* this provides the default theme for the app
-final sampleAppThemeProvider = Provider<ThemeData>((ref) {
-  return SampleAppTheme.light;
+final appThemeProvider = Provider<ThemeData>((ref) {
+  return AppTheme.light;
 });
 
-class SampleAppTheme {
+/// font
+final appFontFamily = GoogleFonts.montserrat().fontFamily;
+
+/// This is the default theme for the app
+class AppTheme {
+  /// light theme
   static ThemeData get light {
     // text theme
-    final TextTheme textTheme = ThemeData.light().textTheme;
+    final textTheme = ThemeData.light().textTheme;
 
-    // TODO put app font here, default is Lato
-    const textStyleFunction = GoogleFonts.lato;
+    const textStyleFunction = GoogleFonts.montserrat;
 
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorSchemeSeed: sampleAppColor,
+      colorSchemeSeed: appColor,
 
       //* -- Visual Density
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -24,20 +28,20 @@ class SampleAppTheme {
       //* -- Appbar
       appBarTheme: AppBarTheme(
         centerTitle: true,
-        // backgroundColor: sampleAppColor,
-        // TODO put app font here, default is Lato
-        titleTextStyle: GoogleFonts.lato(
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        foregroundColor: appWhite,
+        titleTextStyle: GoogleFonts.montserrat(
           fontSize: 20,
           fontWeight: FontWeight.w700,
-          color: sampleAppWhite,
         ),
       ),
 
       //* -- tooltip
       tooltipTheme: const TooltipThemeData(
-        textStyle: TextStyle(color: sampleAppColor),
+        textStyle: TextStyle(color: appColor),
         decoration: BoxDecoration(
-          color: sampleAppSecondaryColor,
+          color: appSecondaryColor,
           borderRadius: borderRadius4,
         ),
       ),
@@ -45,7 +49,9 @@ class SampleAppTheme {
       //* -- text button
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(padding16),
+          padding: WidgetStateProperty.all(
+            padding16,
+          ),
         ),
       ),
 

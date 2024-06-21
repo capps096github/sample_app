@@ -1,10 +1,12 @@
-import '../../sample_app_exporter.dart';
+import '../../app_exporter.dart';
 
-class SampleAppResponsiveBuilder extends ConsumerWidget {
-  const SampleAppResponsiveBuilder({
+/// Responsive builder
+class AppResponsiveBuilder extends ConsumerWidget {
+  /// [AppResponsiveBuilder] constructor
+  const AppResponsiveBuilder({
     required this.mobile,
-    this.tablet,
     required this.desktop,
+    this.tablet,
     super.key,
   });
 
@@ -20,10 +22,10 @@ class SampleAppResponsiveBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // responsiveness
-    final sampleAppResponsive = ref.watch(sampleAppResponsiveProvider(context));
+    final appResponsive = ref.watch(appResponsiveProvider(context));
 
-    final isDesktop = sampleAppResponsive.isDesktopScreen;
-    final isTablet = sampleAppResponsive.isTabletScreen;
+    final isDesktop = appResponsive.isDesktopScreen;
+    final isTablet = appResponsive.isTabletScreen;
 
     if (isDesktop) {
       return desktop;

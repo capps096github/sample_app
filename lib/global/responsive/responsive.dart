@@ -1,11 +1,12 @@
-import '../../sample_app_exporter.dart';
+import '../../app_exporter.dart';
 
 /// This class will be used to provide all responsiveness needed in the app
-class SampleAppResponsive {
-// context
-  final BuildContext context;
+class AppResponsive {
+  /// Constructor for the AppResponsive class
+  AppResponsive({required this.context});
 
-  SampleAppResponsive({required this.context});
+  /// context
+  final BuildContext context;
 
   ///If the `Current Screen Width` is for the `SmallMobile i.e <300`
   static bool isSmallMobile(BuildContext context) =>
@@ -41,16 +42,16 @@ class SampleAppResponsive {
 
   /// getter for isMobile or isMediumMobile or isSmallMobile
   bool get isMobileScreen =>
-      SampleAppResponsive.isMobile(context) ||
-      SampleAppResponsive.isMediumMobile(context) ||
-      SampleAppResponsive.isSmallMobile(context);
+      AppResponsive.isMobile(context) ||
+      AppResponsive.isMediumMobile(context) ||
+      AppResponsive.isSmallMobile(context);
 
   /// getter for isTablet or isMediumTablet or isLargeTablet
   bool get isTabletScreen =>
-      SampleAppResponsive.isTablet(context) ||
-      SampleAppResponsive.isMediumTablet(context) ||
-      SampleAppResponsive.isLargeTablet(context);
+      AppResponsive.isTablet(context) ||
+      AppResponsive.isMediumTablet(context) ||
+      AppResponsive.isLargeTablet(context);
 
   /// getter for isDesktop
-  bool get isDesktopScreen => SampleAppResponsive.isDesktop(context);
+  bool get isDesktopScreen => AppResponsive.isDesktop(context);
 }

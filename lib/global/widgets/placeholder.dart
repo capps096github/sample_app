@@ -1,35 +1,36 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../sample_app_exporter.dart';
+import '../../app_exporter.dart';
 
-class SampleAppPlaceholder extends StatelessWidget {
+/// a place holder widget to render blank sample screens in the app
+class AppPlaceholder extends StatelessWidget {
   ///This is a placeholder widget used to render blank sample screens in the app
-  const SampleAppPlaceholder({super.key, required this.title});
+  const AppPlaceholder({required this.title, super.key});
 
   /// title text for the screen
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: sampleAppRandomColor,
+    return ColoredBox(
+      color: appRandomColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Center(
             child: Icon(
               CupertinoIcons.circle_grid_hex_fill,
-              color: sampleAppWhite,
+              color: appWhite,
               size: 80,
             ),
           ),
 
-          const VerticalSpace(of: spacing16),
+          const Spacing(of: spacing16),
 
           // title
           Text(
-            title + sampleAppRandomColor.toString(),
-            style: const TextStyle(color: sampleAppWhite),
+            title + appRandomColor.toString(),
+            style: const TextStyle(color: appWhite),
           ),
         ],
       ),

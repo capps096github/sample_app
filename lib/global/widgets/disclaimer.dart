@@ -1,15 +1,20 @@
 import 'package:flutter/gestures.dart';
 
-import '../../sample_app_exporter.dart';
+import '../../app_exporter.dart';
 
-class SampleAppDisclaimer extends StatelessWidget {
-  const SampleAppDisclaimer({
+/// This is the disclaimer for the app
+class AppDisclaimer extends StatelessWidget {
+  /// [AppDisclaimer] constructor
+  const AppDisclaimer({
     super.key,
-    this.continuingColor = sampleAppColor,
-    this.termsPrivacycolor = sampleAppSecondaryColor,
+    this.continuingColor = appColor,
+    this.termsPrivacycolor = appSecondaryColor,
   });
 
+  /// color for the continuing text
   final Color continuingColor;
+
+  /// color for the terms and privacy policy
   final Color termsPrivacycolor;
 
   @override
@@ -17,14 +22,14 @@ class SampleAppDisclaimer extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        text: 'By continuing, you declare that you accept The Calcut\n',
-        style: TextStyle(color: continuingColor),
+        text: 'By continuing, you declare that you accept The SampleApp ',
+        style: GoogleFonts.montserrat(color: continuingColor, fontSize: 10),
         children: <TextSpan>[
           TextSpan(
             text: 'Terms of Service',
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                //TODO go to the Terms Page
+                //go to the Terms Page
                 // context.push(termsPath);
               },
             style: TextStyle(
@@ -38,7 +43,7 @@ class SampleAppDisclaimer extends StatelessWidget {
             text: 'Privacy Policy',
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                // TODO go to the Policies Page
+                //  go to the Policies Page
                 // context.push(policiesPath);
               },
             style: TextStyle(
